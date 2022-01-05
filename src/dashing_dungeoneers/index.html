@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.7/pixi.min.js"></script>
+   <script src="src/app.js" type="module" defer></script>
+   <Title>Dashing Dungeoneers</Title>
+   <style>
+
+      :root {
+         background-color: #1f1f1f;
+         color: white;
+      }
+
+      div {
+         position: absolute;
+         top: 1%;
+         left: 50%;
+         transform: translate(-50%, 0);
+      }
+
+      #game-over {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         padding: 16px;
+         background-color: #1f1f1f11;
+         border: 5px solid #0f0f0f;
+         text-align: center;
+         display: none;
+      }
+
+      canvas {
+         background-color: #1f1f1f;
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         width: 750px;
+         height: 750px;
+         image-rendering: crisp-edges;
+         image-rendering: -moz-crisp-edges;
+         z-index: -1;
+      }
+   </style>
+</head>
+<body>
+   <p></p>
+   <p></p>
+   <p></p>
+   <div>Score: <span id="score">0</span></div>
+   <div id="game-over">
+      <span>Game Over</span>
+      <br>
+      <button id="play">Play Again</button>
+   </div>
+   <canvas></canvas>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Click to dash towards and slay your foes!

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroids</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #1F1F1F;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            z-index: -1
+        }
+
+        div {
+            color: white;
+            font-size: 24px;
+        }
+
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+    </style>
+    <script src="coroutine.js" type="module" defer></script>
+    <script src="global.js" type="module" defer></script>
+    <script src="collider.js" type="module" defer></script>
+    <script src="gameobject.js" type="module" defer></script>
+    <script src="asteroid.js" type="module" defer></script>
+    <script src="projectile.js" type="module" defer></script>
+    <script src="spaceship.js" type="module" defer></script>
+    <script src="app.js" type="module" defer></script>
+</head>
+<body>
+    <div id="score-display">Asteroids Destroyed: <span id="score">0</span></div>
+    <canvas></canvas>
+    <div id="game-over">
+        Game Over!
+        <br>
+        Score: <span id="final-score"></span>
+        <br>
+        <button>Play Again</button>
+    </div>
+</body>
+</html>
