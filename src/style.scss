@@ -1,68 +1,150 @@
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
 }
 
-.img {
-    background-size: contain;
-    background-repeat: no-repeat;
+.text {
+    color: white;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-section {
+.card.desc.text {
+    border-top: 1px solid #fff;
+}
+
+.desc.text {
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+.title.text {
+    font-weight: bold;
+    font-size: 56px;
+}
+
+.carousel {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
     height: 100vh;
-    display: block;
-    position: relative;
+    overflow: hidden;
 }
 
-#about {
-    background-color: #333;
+.carousel-item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position:absolute;
+    width: 100%;
+    height: 100%;
 }
 
-#highlights {
-    background-color: #222;
+.container {
+    transform-style:preserve-3d;
+    perspective: 100px;
+    perspective-origin: bottom;
+    position: absolute;
+    left: 60%;
+}
+
+#images .carousel-item {
+    transition:all 0.75s ease-in-out;
+}
+
+#description .carousel-item {
+    transition: all 0.6s ease-in-out;
+}
+
+#description {
+    transform: rotateY(-2deg) skewX(-1deg);
+    height: 200vh;
+}
+
+#description > div {
+    left: 0;
+    max-width: 400px;
+    max-height: 600px;
+    position: absolute;
+    background-color: #111111cc;
+    box-shadow: 12px 12px 2px 1px #00000044;
+    padding: 16px;
+}
+
+#description .links {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
 }
 
-#showcase {
-    background-color: #111;
+a {
+    color: white;
+    text-decoration: none;
 }
 
-#about .container {
+.btn {
+    transition: all 0.2s ease-in-out;
+    padding: 2px 16px;
+}
+
+.btn:hover {
+    color: #111;
+    background-color:white;
+}
+
+#about {
     position: absolute;
+    padding: 64px;
+    width: fit-content;
+    left: -100%;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    padding: 16px;
-    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    transform: translateY(-50%);
+    font-size: 48px;
+    z-index: 1000;
+    background-color: #111111cc;
+    color: white;
+    animation: opening 0.7s ease-in-out forwards;
 }
 
-#about .portrait {
-    width: 100px;
-    height: 100px;
-    background-image: url("../images/placeholder.png");
-    border-radius: 50%;
-    float: left;
-    margin-right: 16px;
+@keyframes opening{
+    from {
+        left: -100%;
+    }
+    to {
+        left: 0%;
+    }
 }
 
-#highlights .img.thumbnail {
-    width: 400px;
-    height: 200px;
-    background-image: url("../images/background.png");
+.navigator {
+    position: absolute;
+    bottom: 64px;
+    right: 64px;
+    margin-right: 0;
+    display: flex;
 }
 
-#highlights .highlight {
-    width: 800px;
-    margin: auto;
+.navigator #blips {
+    display: flex;
 }
 
-#showcase .grid {
-    display: grid;
+.navigator .blip > div:hover, .btn {
+    cursor: pointer;
+}
+
+.navigator .blip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.navigator .blip > div {
+    background-color: #333;
+    border-radius: 500px;
+    width: 16px;
+    height: 16px;
+}
+
+#blips .selected {
+    background-color: white;
 }
