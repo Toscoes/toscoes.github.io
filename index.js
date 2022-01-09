@@ -1,10 +1,10 @@
 /* Hi, if you're reading this: I know this is quite, quite messy :( 
    I really wanted to get this in for the application
 */
-let pong = "../images/pong.png"
+let pong = "./images/pong.png"
 const Images = [pong,pong,pong]
 const Titles = ["", "Pong", "Asteroids 2.0", "Dashing Dungeoneers" ]
-const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./spacewar/index.html", ""]
+const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./src/spacewar/index.html", ""]
 const Source = []
 
 const Descriptions = [
