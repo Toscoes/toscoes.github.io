@@ -1,0 +1,1 @@
+Thanks for checking this repository out. Check out some projects in the ```src``` folder that are not listed in the portfolio carousel.
