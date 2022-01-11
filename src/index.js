@@ -17,11 +17,11 @@ const Descriptions = [
     first to score 7 points! Oh, and you can also 'dash' up and down 
     by pressing the spacebar, for a bit of spice.`,
 
-    `A depiction of our solar system. No JavaScript, just HTML and CSS.`,
-
     `Slash through endless enemies in this 1-button, fast paced game. 
     Made in pure JavaScript, my own programmer art, and inspired by an old flash game. 
-    Try to fake out the big guys with shields!`
+    Try to fake out the big guys with shields!`,
+
+    `A depiction of our solar system. No JavaScript, just HTML and CSS.`
     
 ]
 
