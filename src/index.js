@@ -2,11 +2,11 @@
    I really wanted to get this in for the application
 */
 let img1 = "./images/pong.png"
-let img2 = "./images/placeholder.png"
-let img3 = "./images/background.png"
+let img2 = "./images/dd.png"
+let img3 = "./images/solarsystem.png"
 const Images = [img1,img2,img3]
-const Titles = ["", "Pong", "Asteroids 2.0", "Dashing Dungeoneers" ]
-const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./src/spacewar/index.html", "./src/dashing_dungeoneers/index.html"]
+const Titles = ["", "Pong", "Dashing Dungeoneers", "CSS Solar System" ]
+const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./src/dashing_dungeoneers/index.html", "./src/cssss/solarsystem.html"]
 const Source = []
 
 const Descriptions = [
@@ -17,10 +17,10 @@ const Descriptions = [
     first to score 7 points! Oh, and you can also 'dash' up and down 
     by pressing the spacebar, for a bit of spice.`,
 
-    `Dodge and destroy asteroids. Made in pure JavaScript and my own programmer art.`,
+    `A depiction of our solar system. No JavaScript, just HTML and CSS.`,
 
     `Slash through endless enemies in this 1-button, fast paced game. 
-    Inspired by an old flash game. 
+    Made in pure JavaScript, my own programmer art, and inspired by an old flash game. 
     Try to fake out the big guys with shields!`
     
 ]
