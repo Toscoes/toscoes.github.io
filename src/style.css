@@ -1,3 +1,7 @@
+:root {
+    --primary-background: #11111199;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -9,18 +13,26 @@ body {
     font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-.card.desc.text {
-    border-top: 1px solid #fff;
-}
-
 .desc.text {
-    font-size: 1em;
+    font-size: 1.4vw;
     line-height: 1.5;
 }
 
 .title.text {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 2.5vw;
+}
+
+.bigger.title.text {
+    font-size: 3.4vw;
+}
+
+.container {
+    z-index: 1000;
+    padding: 32px;
+    background-color: var(--primary-background);
+    transform: translateX(-15px) skewX(-15deg);
+    width: 60%;
 }
 
 .carousel {
@@ -41,38 +53,34 @@ body {
     height: 100%;
 }
 
-.container {
-    transform-style:preserve-3d;
-    perspective: 100px;
-    perspective-origin: bottom;
-    position: absolute;
-    left: 60%;
-}
-
 #images .carousel-item {
     transition:all 0.75s ease-in-out;
 }
 
-#description .carousel-item {
-    transition: all 0.6s ease-in-out;
+#descriptions > div {
+    transition:all 0.6s ease-in-out;
 }
 
-#description {
-    transform: rotateY(-2deg) skewX(-1deg);
-    height: 200vh;
+#about {
+    position: relative;
+    display: flex;
+    left: -100%;
+    top: 0;
+    animation: opening 0.7s ease-in-out forwards;
+    box-shadow: -20px 0px var(--primary-background);
+    flex-direction: column;
+    align-items: end;
+    gap: 4px;
 }
 
-#description > div {
-    left: 0;
-    max-width: 400px;
-    max-height: 600px;
+.description {
     position: absolute;
-    background-color: #111111cc;
-    box-shadow: 12px 12px 2px 1px #00000044;
-    padding: 16px;
+    bottom: 0;
+    right:0;
+    box-shadow: 60px 0px var(--primary-background);
 }
 
-#description .links {
+.description .links {
     display: flex;
     justify-content: space-around;
 }
@@ -85,25 +93,14 @@ a {
 .btn {
     transition: all 0.2s ease-in-out;
     padding: 2px 16px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
     color: #111;
     background-color:white;
-}
-
-#about {
-    position: absolute;
-    padding: 64px;
-    width: fit-content;
-    left: -100%;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    z-index: 1000;
-    background-color: #111111cc;
-    color: white;
-    animation: opening 0.7s ease-in-out forwards;
 }
 
 @keyframes opening{
@@ -115,12 +112,23 @@ a {
     }
 }
 
+@keyframes opening2{
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0%;
+    }
+}
+
 .navigator {
-    position: absolute;
-    bottom: 64px;
-    right: 64px;
-    margin-right: 0;
+    position: relative;
+    justify-content: right;
+}
+
+.navigator > div {
     display: flex;
+    width: fit-content;
 }
 
 .navigator #blips {

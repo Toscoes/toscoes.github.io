@@ -1,10 +1,12 @@
 /* Hi, if you're reading this: I know this is quite, quite messy :( 
    I really wanted to get this in for the application
 */
-let pong = "./images/pong.png"
-const Images = [pong,pong,pong]
+let img1 = "./images/pong.png"
+let img2 = "./images/placeholder.png"
+let img3 = "./images/background.png"
+const Images = [img1,img2,img3]
 const Titles = ["", "Pong", "Asteroids 2.0", "Dashing Dungeoneers" ]
-const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./src/spacewar/index.html", ""]
+const Hrefs = ["", "https://toscoes-socket-pong.herokuapp.com/", "./src/spacewar/index.html", "./src/dashing_dungeoneers/index.html"]
 const Source = []
 
 const Descriptions = [
@@ -24,7 +26,7 @@ const Descriptions = [
 ]
 
 const Carousel = document.getElementById("images")
-const Description = document.getElementById("description")
+const DescriptionCarousel = document.getElementById("descriptions")
 const btnPrev = document.getElementById("prev")
 const btnNext = document.getElementById("next")
 const Blips = document.getElementById("blips")
@@ -40,20 +42,19 @@ function init() {
         
         Carousel.appendChild(item)
 
-        let description = document.createElement("div")
-        description.classList.add("carousel-item")
-        description.style.top = `${(currentIndex * 100) + 15}%`
-        description.innerHTML = `
-        <div>
-            <div class="title text">${Titles[currentIndex]}</div>
-            <br>
-            <div class="card desc text">${Descriptions[currentIndex]}</div>
-            <br>
-            <div class="links desc text">
-                <a class="btn" href="${Hrefs[currentIndex]}">View</a><a class="btn" href="#">Source</a>
-            </div>
-        </div>`
-        Description.appendChild(description)
+        let descriptionContainer = document.createElement("div")
+        descriptionContainer.classList.add("container")
+        descriptionContainer.classList.add("description")
+        descriptionContainer.style.right = `${currentIndex * -120}%`
+
+        descriptionContainer.innerHTML = `
+        <span class="bigger title text">${Titles[currentIndex]}</span>&nbsp;&nbsp;&nbsp;<span class="card desc text">${Descriptions[currentIndex]}</span></span>
+        <div class="links desc text">
+            <a class="title text btn" href="${Hrefs[currentIndex]}">View</a><a class="title text btn" href="#">Source</a>
+        </div>
+    `
+
+        DescriptionCarousel.appendChild(descriptionContainer)
 
         let blip = document.createElement("div")
         let circle = document.createElement("div")
@@ -90,8 +91,8 @@ function init() {
     let currentBlip = null
     function jump(index) {
         startingIndex = index
+        const DescriptionCarouselChildren = document.querySelectorAll("#descriptions > div")
         const ImagesCarouselChildren = document.querySelectorAll("#images > div")
-        const DescriptionCarouselChildren = document.querySelectorAll("#description > div")
         const NavigationBlips = document.querySelectorAll("#blips > div")
         currentIndex = -startingIndex
         let b = currentIndex
@@ -99,8 +100,9 @@ function init() {
             carItem.style.left = `${currentIndex * 100}%`
             currentIndex++
         })
+
         DescriptionCarouselChildren.forEach(carItem => {
-            carItem.style.top = `${(b * 100) + 15}%`
+            carItem.style.right = `${b * -120}%`
             b++
         })
 
